@@ -96,3 +96,21 @@ $routes->scope('/', function (RouteBuilder $builder) {
  * });
  * ```
  */
+
+
+
+/*************** ORIGINALE ***************/ 
+// $routes->scope('/', function (RouteBuilder $routes) {
+//     $routes->setExtensions(['json']);
+//     $routes->resources('Actors');
+//     $routes->resources('Films');
+//     $routes->resources('Genres');
+// });
+
+/*************** MODIFICATO ***************/
+$routes->prefix('v1',function (RouteBuilder $routes) {
+    $routes->setExtensions(['json']);
+    $routes->resources('Actors');
+    $routes->resources('Films');
+    $routes->resources('Genres');
+});
